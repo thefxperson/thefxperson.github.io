@@ -1,0 +1,141 @@
+/* COLOR SCHEME
+Headings - #000
+Background - #efefef
+Body Text - #222
+Yellow - #FCA311
+Blue - #023FA2
+Darker Blue - #011F51
+*/
+
+/* BACKGROUND IMAGE */
+html {
+  background: url(./bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+body {
+  margin: 0px;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-family: "Poppins", serif;
+  /*color: #00283D;*/
+  font-size: calc(52px + 1vw);
+  padding: 0px 20px;
+  margin: 0px;
+}
+
+h3 {
+  font-family: "Poppins", serif;
+  font-size: 36px;
+  text-align: center;
+  padding: 20px;
+  margin: 0px;
+}
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(20px + 0.5vw);
+  padding-left: 22px;
+  margin: 0px;
+  font-style: italic;
+}
+
+h5 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  padding: 0px;
+  padding-bottom: 5px;
+  margin: 0px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.navbar li {
+  float: right;
+}
+
+.navbar li a {
+  display: inline-block;
+  text-align: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  font-family: "Poppins", serif;
+}
+
+.navbar li a:hover{
+  color: #FCA311;
+}
+
+.navbar a.active:hover {
+  color: #011F51;
+}
+
+
+#home {
+  float: left;
+  padding-left: 25px;
+}
+
+.name {
+  position: fixed;
+  left: 10%;
+  top: 37%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+}
+
+ul.social{
+  padding: 0px 20px;
+  margin: 10px 0px;
+  float: left;
+}
+.social li{
+  font-size: calc(20px + 0.5vw);;
+  display: inline-block;
+}
+
+.fa {
+  padding: 10px;
+  text-align: center;
+  color: #011F51;
+}
+
+.fa:hover {
+  color: #FCA311;
+  cursor: pointer;
+}
+
+a.active {
+  color: #023FA2;
+}
+
+.navbar a.active:hover {
+  color: #011F51;
+}

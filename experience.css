@@ -1,0 +1,169 @@
+body {
+  background-color: #fafafa;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  color: #222;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  color: #00283D;
+  font-size: 72px;
+  padding: 30px;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  padding: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.navbar li {
+  float: right;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  font-family: "Poppins", serif;
+}
+
+.navbar li a:hover{
+  color: #FCA311;
+}
+
+a.active {
+  color: #023FA2;
+}
+
+.navbar a.active:hover {
+  color: #011F51;
+}
+
+
+#home {
+  float: left;
+  /*font-weight: bold;*/
+  padding-left: 25px;
+}
+
+.experience {
+  margin-bottom: 30px;
+}
+
+.experience h3 {
+  text-align: left;
+  font-size: 18px;
+  padding: 0px;
+  color: #000;
+}
+
+.experience h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding-bottom: 2px;
+}
+
+.experience h4 a:hover {
+  text-decoration: underline;
+}
+
+.experience h5{
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  padding-bottom: 18px;
+  margin: 0px;
+}
+
+li {
+  float: left;
+}
+
+.content {
+  width: 40%;
+  margin: auto;
+}
+
+.resume {
+  padding: 10px;
+  text-align: center;
+  background-color: #023FA2;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.resume:hover {
+  background-color: #011F51;
+  cursor: pointer;
+}
+
+.intro img {
+  width: 170px;
+  border-radius: 50%;
+  margin: 10px 40px 10px 10px;
+  float: left;
+  display: inline-block;
+}
+
+.intro p{
+  width: 60%;
+  margin: 0px;
+  padding-top: 5px;
+}
+
+.intro {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro::after {
+  content: " ";
+  clear: both;
+  display: table;
+}
