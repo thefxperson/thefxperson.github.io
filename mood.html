@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Quattrocento&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet", href="mood.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Parker Carlson</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li id="home"><a href="#" >Parker Carlson</a></li>
+        <!--List in reverse order-->
+        <li><a class="active" href="#">Projects</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+      </ul>
+    </nav>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script>
+d3.json("http://localhost:8000/moods.json")
+  .then((data) => {
+    console.log(data[0])
+    height = 420
+    margin = ({top: 20, right: 20, bottom: 30, left: 30})
+
+    x = d3.scaleUtc()
+        .domain(d3.extent(data, d => d[0]))
+        .range([margin.left, width * 6 - margin.right])
+
+    y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d[1])]).nice(6)
+        .range([height - margin.bottom, margin.top])
+
+
+    area = d3.area()
+      .curve(d3.curveStep)
+      .x(d => x(d[0]))
+      .y0(y(0))
+      .y1(d => y(d[1]))
+
+    xAxis = g => g
+        .attr("transform", `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).ticks(d3.utcMonth.every(1200 / width)).tickSizeOuter(0))
+
+    yAxis = g => g
+        .attr("transform", `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y).ticks(6))
+        .call(g => g.select(".domain").remove())
+        .call(g => g.select(".tick:last-of-type text").clone()
+            .attr("x", 3)
+            .attr("text-anchor", "start")
+            .attr("font-weight", "bold")
+            .text(data.y))
+
+    chart = {
+      const minX = x(data[0][0]);
+      const maxX = x(data[data.length - 1][0]);
+      const overwidth = maxX - minX + margin.left + margin.right;
+
+      const parent = d3.create("div");
+
+      parent.append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .style("position", "absolute")
+        .style("pointer-events", "none")
+        .style("z-index", 1)
+        .call(svg => svg.append("g").call(yAxis));
+
+      const body = parent.append("div")
+        .style("overflow-x", "scroll")
+        .style("-webkit-overflow-scrolling", "touch");
+
+      body.append("svg")
+        .attr("width", overwidth)
+        .attr("height", height)
+        .style("display", "block")
+        .call(svg => svg.append("g").call(xAxis))
+      .append("path")
+        .datum(data)
+        .attr("fill", "steelblue")
+        .attr("d", area);
+
+      yield parent.node();
+
+      // Initialize the scroll offset after yielding the chart to the DOM.
+      body.node().scrollBy(overwidth, 0);
+    }
+  }).catch((error) => {
+    console.error("Error loading json");
+  });
+  </script>
+  </body>
+</html>
