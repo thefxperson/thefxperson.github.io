@@ -24,6 +24,52 @@ body {
   pointer-events: auto;
 }
 
+/* NAVBAR */
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.navbar li {
+  float: right;
+  padding: 0px;
+}
+
+.navbar li a {
+  display: inline-block;
+  text-align: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  font-family: "Poppins", serif;
+  font-size: 16px;
+}
+
+.navbar li a:hover{
+  color: #FCA311;
+}
+
+.navbar a.active:hover {
+  color: #011F51;
+}
+
+a.active {
+  color: #023FA2;
+}
+
+.navbar a.active:hover {
+  color: #011F51;
+}
+
+#home {
+  float: left;
+  padding-left: 25px;
+}
+
+/* GENERAL CSS */
+
 a {
   text-decoration: none;
   color: black;
@@ -69,40 +115,7 @@ h5 {
   margin: 0px;
 }
 
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.navbar li {
-  float: right;
-}
-
-.navbar li a {
-  display: inline-block;
-  text-align: center;
-  padding: 18px 22px;
-  text-decoration: none;
-  font-family: "Poppins", serif;
-}
-
-.navbar li a:hover{
-  color: #FCA311;
-}
-
-.navbar a.active:hover {
-  color: #011F51;
-}
-
-
-#home {
-  float: left;
-  padding-left: 25px;
-}
-
+/* PAGE-SPECIFIC CSS */
 .name {
   position: fixed;
   left: 10%;
@@ -130,12 +143,4 @@ ul.social{
 .fa:hover {
   color: #FCA311;
   cursor: pointer;
-}
-
-a.active {
-  color: #023FA2;
-}
-
-.navbar a.active:hover {
-  color: #011F51;
 }
