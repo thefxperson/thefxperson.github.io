@@ -1,20 +1,35 @@
-body {
-  background-color: #fafafa;
-  margin: 0px;
+/* COLOR SCHEME
+Headings - #000
+Background - #efefef
+Body Text - #222
+Yellow - #FCA311
+Blue - #023FA2
+Darker Blue - #011F51
+*/
+
+/* make scrollbar appear under navbar */
+.content-wrapper {
+  height: calc(100vh - 61px);
+  overflow-y: scroll;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+body {
+  overflow: hidden;
+}
+
+.content {
+  width: 60%;
+  margin: auto;
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  padding: 0px;
-  margin: 0px;
   padding-bottom: 18px;
   color: #222;
+}
+
+h3 {
+  text-align: center;
+  padding: 20px;
 }
 
 ul {
@@ -30,125 +45,8 @@ ul {
 ul li {
   padding-bottom: 5px;
 }
-/*
-h1 {
-  font-family: "Poppins", sans-serif;
-  color: #00283D;
-  font-size: 72px;
-  padding: 30px;
-}
 
-h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 36px;
-  text-align: center;
-  padding: 20px;
-  padding-bottom: 0px;
-  margin: 0px;
-}
-
-h4 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  padding: 0px;
-  padding-bottom: 0px;
-  margin: 0px;
-}
-
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.navbar li {
-  float: right;
-}
-
-.navbar li a {
-  display: block;
-  text-align: center;
-  padding: 18px 22px;
-  text-decoration: none;
-  font-family: "Poppins", serif;
-}
-
-.navbar li a:hover{
-  color: #FCA311;
-}
-
-a.active {
-  color: #023FA2;
-}
-
-.navbar a.active:hover {
-  color: #011F51;
-}
-
-
-#home {
-  float: left;
-  padding-left: 25px;
-}
-*/
-.experience {
-  margin-bottom: 30px;
-}
-
-.experience h3 {
-  text-align: left;
-  font-size: 18px;
-  padding: 0px;
-  color: #000;
-}
-
-.experience h4 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  padding-bottom: 2px;
-}
-
-.experience h4 a:hover {
-  text-decoration: underline;
-}
-
-.experience h5{
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-style: italic;
-  font-weight: normal;
-  padding-bottom: 18px;
-  margin: 0px;
-}
-
-.content {
-  width: 60%;
-  margin: auto;
-}
-
-.resume {
-  padding: 10px;
-  text-align: center;
-  background-color: #023FA2;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  border: 0px;
-  border-radius: 5px;
-  margin-bottom: 60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.resume:hover {
-  background-color: #011F51;
-  cursor: pointer;
-}
-
+/* INTRO SECTION */
 .intro img {
   width: 170px;
   border-radius: 50%;
@@ -174,4 +72,61 @@ a.active {
   content: " ";
   clear: both;
   display: table;
+}
+
+.resume {
+  padding: 10px;
+  text-align: center;
+  background-color: #023FA2;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.resume:hover {
+  background-color: #011F51;
+  cursor: pointer;
+}
+
+/* EXPERIENCE SECTION */
+.experience {
+  margin-bottom: 30px;
+}
+
+.experience h3 {
+  text-align: left;
+  font-size: 18px;
+  padding: 0px;
+  color: #000;
+}
+
+.experience h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding-bottom: 2px;
+}
+
+.experience h4 a {
+  text-decoration: none;
+}
+
+.experience h4 a:hover {
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.experience h5{
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  padding-bottom: 18px;
+  margin: 0px;
 }
