@@ -6,17 +6,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Quattrocento&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet", href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="main.js"></script>
     <title>Parker Carlson</title>
   </head>
   <body>
     <nav>
-      <ul class="navbar">
-        <li id="home"><a href="index.html" >Parker Carlson</a></li>
-        <!--List in reverse order-->
-        <li><a class="active" href="#">Projects</a></li>
-        <li><a href="#">Research</a></li>
-        <li><a href="experience.html">Experience</a></li>
-      </ul>
+      <a id="home" href="index.html" >Parker Carlson</a>
+      <a href="javascript:void(0);" class="icon" onclick="mobileMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div id="nav_elems" class="topnav">
+        <a href="experience.html">Experience</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="#">Projects</a>
+      </div>
     </nav>
 
     <div class="content">

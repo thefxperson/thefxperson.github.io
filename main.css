@@ -8,20 +8,12 @@ Darker Blue - #011F51
 */
 
 /* NAVBAR */
-.navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+nav {
   overflow: hidden;
-  background-color: #fff;
+  background-color: #FFF;
 }
 
-.navbar li {
-  float: right;
-  padding: 0px;
-}
-
-.navbar li a {
+nav a {
   display: inline-block;
   text-align: center;
   padding: 18px 22px;
@@ -30,26 +22,56 @@ Darker Blue - #011F51
   font-size: 16px;
 }
 
-.navbar li a:hover{
+nav div {
+  float: right;
+}
+
+nav a:hover{
   color: #FCA311;
   font-style: normal;
 }
 
-.navbar a.active:hover {
-  color: #011F51;
-}
-
-a.active {
+nav a.active {
   color: #023FA2;
 }
 
-.navbar a.active:hover {
+nav a.active:hover {
   color: #011F51;
 }
 
 #home {
   float: left;
   padding-left: 25px;
+}
+
+nav .icon {
+  display: none;
+}
+
+nav .fa {
+  padding: 0px;
+}
+
+@media screen and (max-width: 600px) {
+ #nav_elems a {
+   display: none;
+ }
+ nav .icon {
+   float: right;
+   display: block;
+ }
+
+ /*responsive class makes links switch to vertical instead of horizontal*/
+ #nav_elems.responsive {
+   width: 100%;
+ }
+
+ #nav_elems.responsive a {
+   float: none;
+   display: block;
+   text-align: left;
+   padding-left: 25px;
+ }
 }
 
 /* GENERAL CSS */
