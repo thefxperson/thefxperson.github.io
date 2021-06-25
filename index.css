@@ -8,8 +8,9 @@ Darker Blue - #011F51
 */
 
 /* background image */
+/* mobile */
 html {
-  background: url(./bg.jpg) no-repeat center center fixed;
+  background: url(./bg-small.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -23,19 +24,34 @@ user-select: auto;
 pointer-events: auto;
 }
 
+/* desktop and tablets */
+@media (min-width: 768px){
+  html {
+    background: url(./bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
 /* PAGE-SPECIFIC CSS */
+/* mobile */
 .name {
   position: fixed;
-  left: 10%;
-  top: 37%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 25px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
 }
 
 ul.social{
   padding: 0px 20px;
   margin: 10px 0px;
-  float: left;
+  text-align: center;
 }
 .social li{
   font-size: calc(20px + 0.5vw);;
@@ -53,19 +69,51 @@ ul.social{
   cursor: pointer;
 }
 
-/* Position text properly */
 h1 {
-  font-size: calc(52px + 1vw);
-  padding: 0px 20px;
+  font-size: 48px;
+  padding: 15px 20px;
+  line-height: 1em;
+  text-align: center;
 }
 
 h4 {
-  font-size: calc(20px + 0.5vw);
-  padding-left: 22px;
+  font-size: 20px;
   font-style: italic;
+  text-align: center;
 }
 
-h5 {
-  padding: 0px;
-  padding-bottom: 5px;
+/* desktop and tablets */
+@media (min-width: 768px){
+  br {
+    display: none;
+  }
+
+  .name {
+    left: 10%;
+    top: 37%;
+    transform: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+  }
+
+  ul.social{
+    padding: 0px 20px;
+    margin: 10px 0px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: calc(52px + 1vw);
+    padding: 0px 20px;
+    line-height: normal;
+    text-align: left;
+  }
+
+  h4 {
+    font-size: calc(20px + 0.5vw);
+    padding-left: 22px;
+    font-style: italic;
+    text-align: left;
+  }
+
 }
