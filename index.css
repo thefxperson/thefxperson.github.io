@@ -9,7 +9,12 @@ Darker Blue - #011F51
 
 /* background image */
 /* mobile */
-html {
+body {
+  user-select: auto;
+  pointer-events: auto;
+}
+
+#bg-img {
   background: url(./bg-small.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,16 +22,13 @@ html {
   background-size: cover;
   user-select: none;
   pointer-events: none;
-}
-
-body {
-user-select: auto;
-pointer-events: auto;
+  height: 100vh;
+  z-index: -1;
 }
 
 /* desktop and tablets */
 @media (min-width: 768px){
-  html {
+  #bg-img {
     background: url(./bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -34,11 +36,18 @@ pointer-events: auto;
     background-size: cover;
     user-select: none;
     pointer-events: none;
+    height: 100vh;
+    z-index: -1;
   }
 }
 
 /* PAGE-SPECIFIC CSS */
 /* mobile */
+nav {
+  position: fixed;
+  width: 100%;
+}
+
 .name {
   position: fixed;
   left: 50%;
@@ -46,6 +55,7 @@ pointer-events: auto;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
+  transition: top 500ms;
 }
 
 ul.social{

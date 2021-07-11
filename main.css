@@ -50,8 +50,11 @@ nav .fa {
 
 /* mobile nav */
 #nav_elems a {
-  display: none;
+  visibility: hidden;
+  padding: 0px 22px 0px 25px;
+  font-size: 0px;
 }
+
 nav .icon {
   float: right;
   display: block;
@@ -65,13 +68,22 @@ nav .icon {
 #nav_elems.responsive a {
   float: none;
   display: block;
+  visibility: visible;
   text-align: left;
+  
+  /* for animated mobile expand */
+  padding: 18px 22px;
   padding-left: 25px;
+  font-size: 16px;
+  transition: padding 0.5s;
 }
 
 /* desktop nav */
 @media (min-width: 768px) {
   nav a {
+    visibility: visible !important;
+    padding: 18px 22px !important;
+    font-size: 16px !important;
     display: inline-block !important;
   }
 
