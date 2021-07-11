@@ -10,3 +10,7 @@ function mobileMenu() {
     y.style.top = "50%";
   }
 }
+
+const vp_height = () => document.documentElement.style.setProperty("--vp-height", String(window.innerHeight) + "px");
+window.addEventListener("resize", vp_height);
+vp_height();

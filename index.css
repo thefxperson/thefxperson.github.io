@@ -22,7 +22,7 @@ body {
   background-size: cover;
   user-select: none;
   pointer-events: none;
-  height: 100vh;
+  height: var(--vp-height);
   z-index: -1;
 }
 
