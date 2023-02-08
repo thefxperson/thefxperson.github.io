@@ -212,3 +212,13 @@ img.mine-wide {
   font-size: 1rem;
   font-weight: bold;
 }
+
+.back {
+  font-style: italic;
+  color: #868e96;
+  text-decoration: none;
+}
+
+pre {
+  margin-left: 2rem;
+}
