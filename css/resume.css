@@ -51,6 +51,8 @@ h5 {
   font-size: 1.2rem;
 }
 
+
+
 p.lead {
   font-size: 1.15rem;
   font-weight: 400;
@@ -221,4 +223,8 @@ img.mine-wide {
 
 pre {
   margin-left: 2rem;
+}
+
+.captioned_img {
+  text-align: center;
 }
