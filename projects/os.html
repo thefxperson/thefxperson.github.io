@@ -65,7 +65,7 @@
         <h3>How to Build a UNIX-like Operating System</h3>
         <p><i>Parker Carlson | 10 Feb. 2023</i></p>
         <p>For OSU's CS 444: Operating Systems II class, I built a basic Unix-like operating system. This follows MIT's JOS curriculum, with some tweaks inspiried by UW and Georgia Tech. In this post, I'll break down the core aspects of this operating system, as well as key code snippets.</p>
-        <p><i>To future OS II students:</i> As I wrote this article, I realized that it has become a sort of "everything that I wish I knew while taking OS II."" If you find this page as a future OS II student, welcome! I hope this information is useful, but please <strong>do not copy the code.</strong> This is plagiarism, you won't learn anything, and you will get caught. OS II is a hard class, but as a reward, you will have an intimite knowledge of how modern operating systems are designed and function. That is priceless.</p>
+        <p><i>To future OS II students:</i> As I wrote this article, I realized that it has become a sort of "everything that I wish I knew while taking OS II."" If you find this page as a future OS II student, welcome! I hope this information is useful, but please <strong>do not copy the code.</strong></p>
         <br>
 
         <h4>The Bootloader</h4>
@@ -124,7 +124,22 @@ kern/monitor.c  // various console functions, including mon_backtrace() at line 
         <p><a href="https://github.com/thefxperson/JOS/tree/lab2" target="_blank" rel="noreferrer noopener">[Code]</a></p>
         <br>
 
-        <h4>User Environments</h4>
+        <!-- TODO: improve writing in this section -->
+        <h4>User Environments & Exception Handling</h4>
+        <p>In this section, I add code to enable loading and running user programs through the operating system. This involves creating protected control transfers between the user environment and operating system, as well as handling exceptions such as page faults.</p>
+        <h5>User Environments</h5>
+        <p>To run a user program, we setup a virtual environment for the program to run in and then tranfer control to this program. First, I create a high level function to create an environment (process) for a user program, <code>env_create()</code>. This allocates memory for the virtual environment, sets it up, then loads in the user program from the ELF binary. These tasks are also further broken down into <code>env_alloc()</code>, <code>env_setup_vm()</code> and <code>lode_icode()</code> respectively. Recall that a trap frame stores the CPU's current registers and is created by the operating system when it recieves an interrupt. By modifying registers in a trap frame, we can set up processes from the operating system so they are ready to run.</p>
+        <p>In <code>env_alloc()</code>, I allocate memory for the environment, generate a process ID, set up various utility variables (parent process, permissions, ect.), and set up the initial register values via the environment's trapframe. Then, in <code>env_setup_vm()</code>, I initialize the new process' page directory, copy the kernel's page directory mappings, and set the process' <code>CR3</code> register to point to this page directory, through the trap frame again. Finally, in <code>load_icode()</code>, I load the compiled ELF binary, verify that it's correct, allocate a stack, and then store the program's entry point in the process' <code>EIP</code> register in the trap frame. Finally, we are ready to run the environment with <code>env_run()</code>, which marks the process as running, load its page directory, then loads its registers from the trap frame, which also sets the instruction pointer to the process' entry point, officially starting the process.</p>
+        <p>Some small functions were omitted from the above overview, such as code to clean up an environment once it has finished running.</p>
+        <p><i>Key Functions (in </i><code>kern/env.c</code><i>):</i></p>
+<pre><code>164 | env_setup_vm()     // create and initialize process page directory
+217 | env_alloc()        // allocate memory for environment, generate process ID, initialize trap frame
+332 | load_icode()       // load an ELF binary, set trap frame EIP to program entry point
+416 | env_create()       // allocate and set up environment, then load program into environment
+527 | env_run()          // mark process as running and transfer control to process
+</code></pre>
+
+        <h5>Exception Handling</h5>
         <p>Technical details coming soon...</p>
         <p><a href="https://github.com/thefxperson/JOS/tree/lab3" target="_blank" rel="noreferrer noopener">[Code]</a></p>
         <br>
