@@ -24,6 +24,10 @@ and worked on applying machine learning techniques to music and sound.
 * OSU Engineering Virtual Showcase - 2nd Place Industry Choice Award
 
 # Publications
+**Parker Carlson**, Wentai Xie, Shanxiu He and Tao Yang. Dynamic Superblock Pruning for Fast Learned-Sparse Retrieval. In: *The 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '25)*, July 2025.
+
+Shanxiu He, Wentai Xie, Yifan Qiao, **Parker Carlson** and Tao Yang. Low-Cost Document Retrieval with Dense Pseudo-Query Encoding. In: *The 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '25)*, July 2025.
+
 Yingrui Yang, **Parker Carlson**, Yifan Qiao, Wentai Xie, Shanxiu He and Tao Yang. LSTM-based Selective Dense Text Retrieval Guided by Sparse Lexical Retrieval. In: *The 47th European Conference on Information Retrieval (ECIR '25)*, April 2025.
 
 Yifan Qiao, **Parker Carlson**, Shanxiu He, Yingrui Yang and Tao Yang. Threshold-driven Pruning with Segmented Maximum Term Weights for Approximate Cluster-based Sparse Retrieval. In: *The 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP '24)*, November 2024. ***Outstanding Paper Award (Top 1%).***
